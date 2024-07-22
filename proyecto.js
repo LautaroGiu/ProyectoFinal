@@ -1,53 +1,44 @@
 let bebidas = {
-    cocacola: 2400,
-    sprite: 2300,
-    pepsi: 2300,
-    fanta: 1900,
-    aquarius: 2000,
-    agua: 1500
+    cocacola: { precio: 2400, inventario: 15 },
+    sprite: { precio: 2300, inventario: 20 },
+    pepsi: { precio: 2300, inventario: 7 },
+    fanta: { precio: 1900, inventario: 19 },
+    aquarius: { precio: 2000, inventario: 15 },
+    agua: { precio: 1500, inventario: 10 }
 }
-
-function calcularCosto(bebida, precio) {
-    let cantidad = Number(prompt(`Ingrese la cantidad de ${bebida} que desea comprar:`))
-    let costo = cantidad * precio;
-
+function calcularCosto(bebida, precio, cantidad) {
+    let costo = cantidad * precio
     console.log(`Ha comprado ${cantidad} unidades de ${bebida}. Total a pagar: $${costo}`)
-    return costo;
+    return costo
 }
 
 function comprarBebida() {
+    let total = 0
+    let seguirComprando = true
 
-    let bebida = prompt("¿Qué bebida desea comprar? (CocaCola, Sprite, Pepsi, Fanta, Aquarius, Agua)").toLowerCase()
-    let total = 0;
-
-    switch (bebida) {
-        case 'cocacola':
-            total = calcularCosto('cocacola', bebidas.cocacola)
-            break;
-        case 'sprite':
-            total = calcularCosto('sprite', bebidas.sprite)
-            break;
-        case 'pepsi':
-            total = calcularCosto('pepsi', bebidas.pepsi)
-            break;
-        case 'fanta':
-            total = calcularCosto('fanta', bebidas.fanta)
-            break;
-        case 'aquarius':
-            total = calcularCosto('aquarius', bebidas.aquarius)
-            break;
-        case 'agua':
-            total = calcularCosto('agua', bebidas.agua)
-            break;
-        default :
-        console.log("bebida no disponible.");
-    }
-
-    if (bebida != bebidas) {
+    while (seguirComprando) {
+        let bebida = prompt("¿Qué bebida desea comprar? (CocaCola, Sprite, Pepsi, Fanta, Aquarius, Agua)").toLowerCase()
         
-    }else {
-        console.log(`Total a pagar: $${total}`);
+        if (bebidas[bebida]) {
+            let cantidad = Number(prompt(`Ingrese la cantidad de ${bebida} que desea comprar (disponibles: ${bebidas[bebida].inventario}):`))
+            
+            if (cantidad <= bebidas[bebida].inventario) {
+                total += calcularCosto(bebida, bebidas[bebida].precio, cantidad)
+                bebidas[bebida].inventario -= cantidad
+            } else {
+                document.getElementById('mensaje').innerText = `No hay suficiente inventario de ${bebida}. Disponible: ${bebidas[bebida].inventario}`;
+            }
+        } else {
+            document.getElementById('mensaje').innerText = "Bebida no disponible.";
+        }
+
+        let respuesta = prompt("¿Desea comprar otra bebida? (sí/no)").toLowerCase()
+        if (respuesta !== 'sí' && respuesta !== 'si') {
+            seguirComprando = false
+        }
     }
+
+    document.getElementById('total').innerText = `Total a pagar: $${total}`;
 }
 
 comprarBebida();
