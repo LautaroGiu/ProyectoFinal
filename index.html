@@ -8,34 +8,16 @@
     <title>Proyecto</title>
 </head>
 <body>
-    <h1>NOMBRE DEL LOGO</h1>
+    <h1 class="compra-bebidas">Compra de Bebidas</h1>
+    <div class="bebidas">
+        <div id="bebidas-list"></div>
+    </div>
+        <button id="comprar-todas" class="btn-compra">Comprar Varias</button>
+        
+        <p id="mensaje"></p>
 
-    <h2>Compra de Bebidas</h2>
-    <div>
-        <label for="bebida">Seleccione una bebida:</label>
-            <select id="bebida">
-                <option value="cocacola">CocaCola</option>
-                <option value="sprite">Sprite</option>
-                <option value="pepsi">Pepsi</option>
-                <option value="fanta">Fanta</option>
-                <option value="aquarius">Aquarius</option>
-                <option value="agua">Agua</option>
-            </select>
-    </div>        
-        <label for="cantidad">Ingrese la cantidad:</label>
-
-        <input type="number" id="cantidad" min="1" value="1">
-
-        <button onclick="comprarBebida()">Comprar</button>
-
-        <button onclick="finalizarCompra()">Finalizar Compra</button>
+        <p id="total"></p>
     
-    <div id="mensaje">
-
-    </div>
-    <div id="total">
-
-    </div>
     <script src="./proyecto.js"></script>
 </body>
 </html>
