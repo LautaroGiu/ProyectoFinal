@@ -1,0 +1,129 @@
+body {
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.title-gaseosa{
+    padding: 20px;
+    margin: 20px;
+}
+
+.bebidas-container{
+    display: flex;
+    margin: 20px auto;
+    justify-content: right;
+    background-color: #e7e7e7;
+    height: 80px;
+}
+.bebida-container h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.jugos-cont{
+    margin: 22px 15px 0 0;
+}
+.jugos{
+    display: flex;
+    justify-content: left;
+    margin-top: 40px;
+}
+.gaseosas{
+    margin: 22px 15px 0 15px;
+}
+.btn-bebidas-energeticas{
+    height: 35px;
+    border: solid 0.8px;
+    color: #e7e7e7;
+    background-color: #000;
+    border-radius: 13px;
+    margin-top: 22px;
+}
+.btn-gaseosas{
+    height: 35px;
+    color: #e7e7e7;
+    background-color: #000;
+    width: 120px;
+    border: solid 0.8px;
+    border-radius: 13px;
+}
+.compra-bebidas{
+    text-align: center;
+}
+.botones-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+.btn-compra, .btn-confirmar {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+#cantidad-gaseosa-0,#cantidad-gaseosa-1,#cantidad-gaseosa-2,#cantidad-gaseosa-3,#cantidad-gaseosa-4,#cantidad-gaseosa-5,#cantidad-gaseosa-6,#cantidad-gaseosa-7{
+    width: 20px;
+}
+.list-container {
+    display: inline-block;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; 
+    margin: 10px;
+    padding: 10px; 
+    border-radius: 8px; 
+    width: 200px;
+    flex-wrap: wrap;
+    height: 272px;
+    background-color: #e7e7e7; 
+}
+.h2-title {
+    font-size: 1.2em; 
+    margin-bottom: 10px; 
+}
+
+.images {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px; 
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.controls-container {
+    align-items: center;
+    margin: 10px;
+}
+
+input[type="number"] {
+    width: 60px;
+    text-align: center; 
+} 
+#comprar-todas-gaseosas{
+    width: 175px;
+    height: 42px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 14px;
+    background-color: #f4f4f4;
+    border: solid 1.2px;
+}
+#confirmar-compra-gaseosas{
+    width: 175px;
+    height: 42px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 14px;
+    background-color: #f4f4f4;
+    border: solid 1.2px;
+}
+#gaseosas-list{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
